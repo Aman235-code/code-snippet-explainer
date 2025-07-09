@@ -17,9 +17,12 @@ function App() {
 
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/snippets/add", {
-        snippet: code,
-      });
+      const res = await axios.post(
+        "https://code-snippet-explainer.onrender.com/api/snippets/add",
+        {
+          snippet: code,
+        }
+      );
       setResult(res.data.result);
     } catch (err) {
       alert("Error generating summary", err);
